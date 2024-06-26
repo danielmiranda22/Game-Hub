@@ -13,6 +13,7 @@ export interface Game {
   name: string;
   background_image: string;
   parent_platforms: { platform: Platform }[]; //is not platform array!! Its an array of objects where wich object as a property called platform of type Platform
+  metacritic: number;
 }
 
 interface FetchGameResponse {
