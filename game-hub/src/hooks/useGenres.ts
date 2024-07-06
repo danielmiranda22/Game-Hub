@@ -16,7 +16,7 @@ export interface Genre {
 
 //use react-query to fetch the data
 
-const apiClient = new APIClient("/genres");
+const apiClient = new APIClient<Genre>("/genres");
 
 const useGenres = () =>
   useQuery({

@@ -10,7 +10,7 @@ export interface Platform {
 
 //const usePlatforms = () => useData<Platform>("/platforms/lists/parents");
 
-const apiClient = new APIClient("/platforms/lists/parents");
+const apiClient = new APIClient<Platform>("/platforms/lists/parents");
 
 const usePlatforms = () =>
   useQuery({
