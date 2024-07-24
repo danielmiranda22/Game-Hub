@@ -1,21 +1,10 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import ms from "ms";
+import { Game } from "../entities/Game";
 import APIClient, { FetchResponse } from "../services/api-client";
 import useGameQueryStore from "../store";
-import { Platform } from "./usePlatforms";
 
 const apiClient = new APIClient<Game>("/games");
-
-export interface Game {
-  id: number;
-  name: string;
-  slug: string;
-  background_image: string;
-  parent_platforms: { platform: Platform }[]; //is not platform array!! Its an array of objects where wich object as a property called platform of type Platform
-  metacritic: number;
-  rating_top: number;
-  description_raw: string;
-}
 
 const useGames = () => {
   const gameQuery = useGameQueryStore((s) => s.gameQuery);
